@@ -18,29 +18,13 @@ spec:
     spec:
       terminationGracePeriodSeconds: 30
       containers:
-          - name: web
-            image: melodyvn2020/simple-devops-image:latest
-            imagePullPolicy: "Always"
-            ports:
-              - containerPort: 8080
-
-#apiVersion: apps/v1
-#kind: Deployment
-#metadata:
-#  name: nginx-deployment
-#  namespace: web
-#spec:
-#  selector:
-#    matchLabels:
-#      app: nginx
-#  replicas: 2
-#  template:
-#    metadata:
-#      labels:
-#        app: nginx
-#    spec:
-#      containers:
-#        - name: nginx
-#          image: bharamicrosystems/nginx:v1
-#          ports:
-#            - containerPort: 80
+        - name: web
+          image: melodyvn2020/simple-devops-image:latest
+          imagePullPolicy: "Always"
+          ports:
+            - containerPort: 8080
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
