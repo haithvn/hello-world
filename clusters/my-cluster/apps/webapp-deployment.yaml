@@ -17,12 +17,12 @@ spec:
         name: web
     spec:
       terminationGracePeriodSeconds: 30
-        containers:
-            - name: web
-              image: melodyvn2020/simple-devops-image:latest
-              imagePullPolicy: "Always"
-              ports:
-                - containerPort: 8080
+      containers:
+          - name: web
+            image: melodyvn2020/simple-devops-image:latest
+            imagePullPolicy: "Always"
+            ports:
+              - containerPort: 8080
 
 #apiVersion: apps/v1
 #kind: Deployment
